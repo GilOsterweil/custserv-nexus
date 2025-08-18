@@ -5,8 +5,9 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Loader2, Shield, User, Lock } from 'lucide-react';
+import { Loader2, User, Lock } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import angelSenseLogo from '@/assets/angelsense-logo.png';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -69,8 +70,12 @@ const Login = () => {
       <div className="w-full max-w-md space-y-8 relative z-10">
         {/* Header */}
         <div className="text-center space-y-4 animate-slide-in">
-          <div className="mx-auto w-20 h-20 bg-gradient-teal rounded-curve-lg flex items-center justify-center shadow-soft animate-float">
-            <Shield className="w-10 h-10 text-primary-foreground" />
+          <div className="mx-auto w-20 h-20 bg-gradient-teal rounded-curve-lg flex items-center justify-center shadow-soft animate-float p-3">
+            <img 
+              src={angelSenseLogo} 
+              alt="AngelSense Logo" 
+              className="w-full h-full object-contain filter brightness-0 invert"
+            />
           </div>
           <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent">
             Customer Support
