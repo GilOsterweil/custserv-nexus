@@ -2,58 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Admin Customer Support Design System - Professional & Modern */
+/* AngelSense-Inspired Customer Support Design System */
 
 @layer base {
   :root {
-    --background: 220 15% 97%;
-    --foreground: 220 25% 15%;
+    --background: 0 0% 100%;
+    --foreground: 217 32% 17%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 25% 15%;
+    --card-foreground: 217 32% 17%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 25% 15%;
+    --popover-foreground: 217 32% 17%;
 
-    --primary: 217 91% 60%;
+    /* AngelSense teal/cyan primary */
+    --primary: 174 64% 60%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 217 91% 70%;
+    --primary-light: 174 64% 75%;
+    --primary-dark: 174 64% 45%;
 
-    --secondary: 220 10% 95%;
-    --secondary-foreground: 220 25% 25%;
+    /* Orange accent like AngelSense buttons */
+    --accent-orange: 14 100% 57%;
+    --accent-orange-foreground: 0 0% 100%;
 
-    --muted: 220 10% 96%;
-    --muted-foreground: 220 8% 46%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 217 32% 17%;
 
-    --accent: 217 91% 95%;
-    --accent-foreground: 217 91% 35%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 174 64% 95%;
+    --accent-foreground: 174 64% 25%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 217 91% 60%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 174 64% 60%;
 
-    /* Admin-specific tokens */
-    --admin-bg: 220 15% 98%;
-    --admin-surface: 0 0% 100%;
-    --admin-border: 220 13% 91%;
-    --admin-text-primary: 220 25% 15%;
-    --admin-text-secondary: 220 8% 46%;
+    /* AngelSense-inspired gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(258 90% 66%) 0%, hsl(174 64% 60%) 100%);
+    --gradient-teal: linear-gradient(135deg, hsl(174 64% 60%) 0%, hsl(174 64% 75%) 100%);
+    --gradient-surface: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(174 64% 98%) 100%);
+    --gradient-backdrop: linear-gradient(135deg, hsl(258 90% 95%) 0%, hsl(174 64% 95%) 50%, hsl(0 0% 100%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(174 10% 98%) 100%);
     
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(217 91% 70%));
-    --gradient-surface: linear-gradient(135deg, hsl(0 0% 100%), hsl(220 10% 98%));
-    --gradient-backdrop: linear-gradient(135deg, hsl(220 15% 97%), hsl(217 91% 95%));
+    /* Curved organic shapes */
+    --curve-radius: 2rem;
+    --curve-lg: 3rem;
     
-    /* Shadows */
-    --shadow-elegant: 0 10px 30px -5px hsl(217 91% 60% / 0.1);
-    --shadow-card: 0 4px 12px -2px hsl(220 13% 91% / 0.4);
-    --shadow-focus: 0 0 0 3px hsl(217 91% 60% / 0.15);
+    /* Soft shadows */
+    --shadow-soft: 0 8px 30px hsl(174 64% 60% / 0.12);
+    --shadow-card: 0 4px 20px hsl(217 32% 17% / 0.08);
+    --shadow-focus: 0 0 0 3px hsl(174 64% 60% / 0.2);
+    --shadow-button: 0 4px 14px hsl(174 64% 60% / 0.25);
     
-    /* Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Smooth transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --radius: 0.5rem;
 

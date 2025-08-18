@@ -61,28 +61,32 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-backdrop flex items-center justify-center p-4 animate-fade-in">
-      <div className="w-full max-w-md space-y-6">
+    <div className="min-h-screen bg-gradient-backdrop flex items-center justify-center p-4 animate-fade-in relative overflow-hidden">
+      {/* Decorative shapes */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-primary/10 rounded-full -translate-x-1/2 -translate-y-1/2 animate-float"></div>
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-accent-orange/10 rounded-full translate-x-1/3 translate-y-1/3 animate-pulse-soft"></div>
+      
+      <div className="w-full max-w-md space-y-8 relative z-10">
         {/* Header */}
-        <div className="text-center space-y-2 animate-slide-in">
-          <div className="mx-auto w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center shadow-elegant">
-            <Shield className="w-8 h-8 text-primary-foreground" />
+        <div className="text-center space-y-4 animate-slide-in">
+          <div className="mx-auto w-20 h-20 bg-gradient-teal rounded-curve-lg flex items-center justify-center shadow-soft animate-float">
+            <Shield className="w-10 h-10 text-primary-foreground" />
           </div>
-          <h1 className="text-3xl font-bold text-admin-text-primary">
-            Customer Support Admin
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent">
+            Customer Support
           </h1>
-          <p className="text-admin-text-secondary">
+          <p className="text-lg text-muted-foreground">
             Sign in to access the admin portal
           </p>
         </div>
 
         {/* Login Form */}
-        <Card className="shadow-card border-admin-border bg-gradient-surface">
-          <CardHeader className="space-y-1">
-            <CardTitle className="text-2xl text-center text-admin-text-primary">
+        <Card className="shadow-soft border-0 bg-gradient-card backdrop-blur-sm rounded-curve-lg">
+          <CardHeader className="space-y-2 pb-8">
+            <CardTitle className="text-3xl text-center font-bold text-foreground">
               Sign In
             </CardTitle>
-            <CardDescription className="text-center text-admin-text-secondary">
+            <CardDescription className="text-center text-muted-foreground text-lg">
               Enter your credentials to continue
             </CardDescription>
           </CardHeader>
@@ -94,12 +98,12 @@ const Login = () => {
                 </Alert>
               )}
               
-              <div className="space-y-2">
-                <Label htmlFor="email" className="text-admin-text-primary">
+              <div className="space-y-3">
+                <Label htmlFor="email" className="text-foreground font-medium text-base">
                   Email Address
                 </Label>
                 <div className="relative">
-                  <User className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                  <User className="absolute left-4 top-4 h-5 w-5 text-muted-foreground" />
                   <Input
                     id="email"
                     type="email"
@@ -108,17 +112,17 @@ const Login = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     required
                     disabled={isLoading}
-                    className="pl-10 transition-all duration-200 focus:shadow-focus"
+                    className="pl-12 h-12 rounded-curve border-2 border-border focus:border-primary focus:shadow-focus transition-bounce text-base"
                   />
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="password" className="text-admin-text-primary">
+              <div className="space-y-3">
+                <Label htmlFor="password" className="text-foreground font-medium text-base">
                   Password
                 </Label>
                 <div className="relative">
-                  <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                  <Lock className="absolute left-4 top-4 h-5 w-5 text-muted-foreground" />
                   <Input
                     id="password"
                     type="password"
@@ -127,23 +131,23 @@ const Login = () => {
                     onChange={(e) => setPassword(e.target.value)}
                     required
                     disabled={isLoading}
-                    className="pl-10 transition-all duration-200 focus:shadow-focus"
+                    className="pl-12 h-12 rounded-curve border-2 border-border focus:border-primary focus:shadow-focus transition-bounce text-base"
                   />
                 </div>
               </div>
 
               <Button
                 type="submit"
-                className="w-full bg-gradient-primary hover:opacity-90 transition-all duration-200 shadow-elegant"
+                className="w-full h-12 bg-gradient-teal hover:scale-[1.02] active:scale-[0.98] transition-bounce shadow-button text-lg font-semibold rounded-curve"
                 disabled={isLoading}
               >
                 {isLoading ? (
                   <>
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    <Loader2 className="mr-3 h-5 w-5 animate-spin" />
                     Signing in...
                   </>
                 ) : (
-                  'Sign In'
+                  'Sign In to Portal'
                 )}
               </Button>
             </form>
@@ -151,8 +155,14 @@ const Login = () => {
         </Card>
 
         {/* Footer */}
-        <div className="text-center text-sm text-admin-text-secondary">
-          <p>Secure admin access for customer support team</p>
+        <div className="text-center space-y-2 animate-fade-in">
+          <p className="text-muted-foreground">
+            🔒 Secure admin access for customer support team
+          </p>
+          <div className="flex items-center justify-center space-x-2 text-sm text-muted-foreground">
+            <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+            <span>Connected & Secure</span>
+          </div>
         </div>
       </div>
     </div>

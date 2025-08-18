@@ -72,32 +72,34 @@ const Dashboard = () => {
   return (
     <div className="min-h-screen bg-gradient-backdrop">
       {/* Header */}
-      <header className="bg-admin-surface border-b border-admin-border shadow-card">
+      <header className="bg-gradient-card border-b border-primary/10 shadow-soft backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-20">
             <div className="flex items-center space-x-4">
-              <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <MessageSquare className="w-5 h-5 text-primary-foreground" />
+              <div className="w-12 h-12 bg-gradient-teal rounded-curve flex items-center justify-center shadow-button">
+                <MessageSquare className="w-6 h-6 text-primary-foreground" />
               </div>
-              <h1 className="text-xl font-semibold text-admin-text-primary">
-                Customer Support Admin
-              </h1>
+              <div>
+                <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent">
+                  Customer Support
+                </h1>
+                <p className="text-sm text-muted-foreground">Admin Portal</p>
+              </div>
             </div>
             
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-6">
               <div className="text-right">
-                <p className="text-sm font-medium text-admin-text-primary">
+                <p className="text-base font-semibold text-foreground">
                   {user.name || user.email}
                 </p>
-                <p className="text-xs text-admin-text-secondary">
+                <p className="text-sm text-muted-foreground">
                   Support Agent
                 </p>
               </div>
               <Button
                 variant="outline"
-                size="sm"
                 onClick={handleLogout}
-                className="transition-all duration-200"
+                className="border-2 border-primary/20 hover:border-primary hover:bg-primary/5 transition-bounce rounded-curve"
               >
                 <LogOut className="w-4 h-4 mr-2" />
                 Logout
@@ -110,80 +112,80 @@ const Dashboard = () => {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Welcome Section */}
-        <div className="mb-8 animate-fade-in">
-          <h2 className="text-2xl font-bold text-admin-text-primary mb-2">
-            Welcome back, {user.name || 'Admin'}
+        <div className="mb-12 animate-fade-in text-center">
+          <h2 className="text-4xl font-bold text-foreground mb-4">
+            Welcome back, <span className="bg-gradient-to-r from-primary to-accent-orange bg-clip-text text-transparent">{user.name || 'Admin'}</span>
           </h2>
-          <p className="text-admin-text-secondary">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Here's what's happening with customer support today
           </p>
         </div>
 
         {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 animate-slide-in">
-          <Card className="shadow-card border-admin-border bg-gradient-surface">
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium text-admin-text-secondary">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12 animate-slide-in">
+          <Card className="shadow-soft border-0 bg-gradient-card rounded-curve-lg hover:scale-105 transition-bounce">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
+              <CardTitle className="text-sm font-medium text-muted-foreground">
                 Active Tickets
               </CardTitle>
-              <MessageSquare className="h-4 w-4 text-muted-foreground" />
+              <MessageSquare className="h-5 w-5 text-primary/60" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-admin-text-primary">
+              <div className="text-3xl font-bold text-foreground">
                 {stats.activeTickets}
               </div>
-              <Badge variant="secondary" className="mt-2">
+              <Badge className="mt-3 bg-accent-orange/10 text-accent-orange border-accent-orange/20 rounded-curve">
                 Needs attention
               </Badge>
             </CardContent>
           </Card>
 
-          <Card className="shadow-card border-admin-border bg-gradient-surface">
+          <Card className="shadow-soft border-0 bg-gradient-card rounded-curve-lg hover:scale-105 transition-bounce">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium text-admin-text-secondary">
+              <CardTitle className="text-sm font-medium text-muted-foreground">
                 Resolved Today
               </CardTitle>
-              <Users className="h-4 w-4 text-muted-foreground" />
+              <Users className="h-5 w-5 text-primary/60" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-admin-text-primary">
+              <div className="text-3xl font-bold text-foreground">
                 {stats.resolvedToday}
               </div>
-              <Badge variant="secondary" className="mt-2 bg-green-50 text-green-700 border-green-200">
+              <Badge className="mt-3 bg-green-100 text-green-700 border-green-200 rounded-curve">
                 Great work!
               </Badge>
             </CardContent>
           </Card>
 
-          <Card className="shadow-card border-admin-border bg-gradient-surface">
+          <Card className="shadow-soft border-0 bg-gradient-card rounded-curve-lg hover:scale-105 transition-bounce">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium text-admin-text-secondary">
+              <CardTitle className="text-sm font-medium text-muted-foreground">
                 Avg Response Time
               </CardTitle>
-              <Clock className="h-4 w-4 text-muted-foreground" />
+              <Clock className="h-5 w-5 text-primary/60" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-admin-text-primary">
+              <div className="text-3xl font-bold text-foreground">
                 {stats.avgResponseTime}
               </div>
-              <Badge variant="secondary" className="mt-2">
+              <Badge className="mt-3 bg-primary/10 text-primary border-primary/20 rounded-curve">
                 Within SLA
               </Badge>
             </CardContent>
           </Card>
 
-          <Card className="shadow-card border-admin-border bg-gradient-surface">
+          <Card className="shadow-soft border-0 bg-gradient-card rounded-curve-lg hover:scale-105 transition-bounce">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium text-admin-text-secondary">
+              <CardTitle className="text-sm font-medium text-muted-foreground">
                 Customer Satisfaction
               </CardTitle>
-              <TrendingUp className="h-4 w-4 text-muted-foreground" />
+              <TrendingUp className="h-5 w-5 text-primary/60" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-admin-text-primary">
+              <div className="text-3xl font-bold text-foreground">
                 {stats.customerSatisfaction}%
               </div>
-              <Badge variant="secondary" className="mt-2 bg-blue-50 text-blue-700 border-blue-200">
+              <Badge className="mt-3 bg-blue-100 text-blue-700 border-blue-200 rounded-curve">
                 Excellent
               </Badge>
             </CardContent>
@@ -191,25 +193,25 @@ const Dashboard = () => {
         </div>
 
         {/* Quick Actions */}
-        <Card className="shadow-card border-admin-border bg-gradient-surface animate-fade-in">
-          <CardHeader>
-            <CardTitle className="text-admin-text-primary">Quick Actions</CardTitle>
-            <CardDescription className="text-admin-text-secondary">
+        <Card className="shadow-soft border-0 bg-gradient-card rounded-curve-lg animate-fade-in">
+          <CardHeader className="pb-6">
+            <CardTitle className="text-2xl font-bold text-foreground">Quick Actions</CardTitle>
+            <CardDescription className="text-muted-foreground text-lg">
               Common tasks for customer support agents
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <Button className="h-20 flex flex-col space-y-2 bg-gradient-primary hover:opacity-90 transition-all duration-200">
-                <MessageSquare className="w-6 h-6" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Button className="h-24 flex flex-col space-y-3 bg-gradient-teal hover:scale-105 active:scale-95 transition-bounce shadow-button rounded-curve text-lg font-semibold">
+                <MessageSquare className="w-8 h-8" />
                 <span>View Tickets</span>
               </Button>
-              <Button className="h-20 flex flex-col space-y-2 bg-gradient-primary hover:opacity-90 transition-all duration-200">
-                <Users className="w-6 h-6" />
+              <Button className="h-24 flex flex-col space-y-3 bg-gradient-to-br from-accent-orange to-accent-orange/80 hover:scale-105 active:scale-95 transition-bounce shadow-button rounded-curve text-lg font-semibold text-accent-orange-foreground">
+                <Users className="w-8 h-8" />
                 <span>Customer Lookup</span>
               </Button>
-              <Button className="h-20 flex flex-col space-y-2 bg-gradient-primary hover:opacity-90 transition-all duration-200">
-                <TrendingUp className="w-6 h-6" />
+              <Button className="h-24 flex flex-col space-y-3 bg-gradient-hero hover:scale-105 active:scale-95 transition-bounce shadow-button rounded-curve text-lg font-semibold">
+                <TrendingUp className="w-8 h-8" />
                 <span>Reports</span>
               </Button>
             </div>
