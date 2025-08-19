@@ -70,7 +70,7 @@ const Login = () => {
       <div className="w-full max-w-md space-y-8 relative z-10">
         {/* Header */}
         <div className="text-center space-y-4 animate-slide-in">
-          <div className="mx-auto w-20 h-20 bg-gradient-teal rounded-curve-lg flex items-center justify-center shadow-soft animate-float p-3">
+          <div className="mx-auto w-32 h-32 bg-gradient-teal rounded-curve-lg flex items-center justify-center shadow-soft animate-float p-4">
             <img 
               src={angelSenseLogo} 
               alt="AngelSense Logo" 
