@@ -74,7 +74,7 @@ const Login = () => {
             <img 
               src={angelSenseLogo} 
               alt="AngelSense Logo" 
-              className="w-full h-full object-contain filter brightness-0 invert"
+              className="w-full h-full object-contain"
             />
           </div>
           <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent">
