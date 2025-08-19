@@ -161,9 +161,6 @@ const Login = () => {
 
         {/* Footer */}
         <div className="text-center space-y-2 animate-fade-in">
-          <p className="text-muted-foreground">
-            🔒 Secure admin access for customer support team
-          </p>
           <div className="flex items-center justify-center space-x-2 text-sm text-muted-foreground">
             <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
             <span>Connected & Secure</span>
